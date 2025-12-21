@@ -1,6 +1,8 @@
 # CogniXpert-AI Model v1.0:
 
-Professional, safety-aware conversational AI for supportive mental health use‑cases, built on Meta Llama 3.1 8B and fine‑tuned with LoRA. This repository contains the model configuration, tokenizer, generation defaults, and adapter metadata for efficient deployment.
+Safety‑aware, non‑clinical conversational AI for supportive mental health and wellbeing use‑cases, built on Meta Llama 3.1 8B and fine‑tuned with LoRA. This repository contains the model configuration, tokenizer, generation defaults, and adapter metadata for efficient deployment.
+
+Disclaimer: This project is intended for supportive, non‑clinical use. It does not replace care from licensed mental health professionals and does not provide diagnosis or treatment. If you are in crisis or may harm yourself or others, contact emergency services or your local suicide prevention hotline immediately.
 
 ![License](https://img.shields.io/badge/License-AGPL--3.0-blue)
 ![Model](https://img.shields.io/badge/Model-Llama_3.1_8B-green)
@@ -107,7 +109,7 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 - Place `adapter_config.json` and either `adapter_model.safetensors` or `adapter_model.bin` in the project root (`c:/Users/Public/CogniXpert-Model-v1.0`).
 - The Streamlit demo auto‑attaches the adapter only when both config and weights are present; otherwise it runs base‑only and shows a warning.
 
-## Chat Prompting (Llama 3 format)
+## Chat Prompting:
 
 Llama 3 models expect structured headers and end‑of‑turn markers:
 
