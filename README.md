@@ -1,8 +1,10 @@
-# CogniXpert-AI Model v1.0:
+### CogniXpert-AI Model v1.0:
 
-Safety‑aware, non‑clinical conversational AI for supportive mental health and wellbeing use‑cases, built on Meta Llama 3.1 8B and fine‑tuned with LoRA. This repository contains the model configuration, tokenizer, generation defaults, and adapter metadata for efficient deployment.
+- Safety‑aware, non‑clinical conversational AI for supportive mental health and wellbeing use‑cases, built on Meta Llama 3.1 8B and fine‑tuned with LoRA. This repository contains the model configuration, tokenizer, generation defaults, and adapter metadata for efficient deployment.
 
-Disclaimer: This project is intended for supportive, non‑clinical use. It does not replace care from licensed mental health professionals and does not provide diagnosis or treatment. If you are in crisis or may harm yourself or others, contact emergency services or your local suicide prevention hotline immediately.
+#### Disclaimer:
+
+- **Disclaimer:** This project is intended for supportive, non‑clinical use. It does not replace care from licensed mental health professionals and does not provide diagnosis or treatment. If you are in crisis or may harm yourself or others, contact emergency services or your local suicide prevention hotline immediately.
 
 ![License](https://img.shields.io/badge/License-AGPL--3.0-blue)
 ![Model](https://img.shields.io/badge/Model-Llama_3.1_8B-green)
@@ -10,14 +12,14 @@ Disclaimer: This project is intended for supportive, non‑clinical use. It does
 ![Transformers](https://img.shields.io/badge/Transformers-4.47.1-purple)
 ![Unsloth](https://img.shields.io/badge/Unsloth-2024.9-teal)
 
-Note: For Hugging Face model card rendering, use `README.hf.md` (includes YAML metadata).
+**Note:** For Hugging Face model card rendering, use `README.hf.md` (includes YAML metadata).
 
-## Research & Open Innovation for Mental Health
+### Research & Open Innovation for Mental Health:
 
-We’re giving developers, researchers, academia, non‑profits, and mental health advocates the foundation tools to build better care through open‑source contribution.
+- We’re giving developers, researchers, academia, non‑profits, and mental health advocates the foundation tools to build better care through open‑source contribution.
 Foundational fine‑tuned model developed by CogniX LTD.
 
-## Highlights
+### Highlights:
 
 - 8B Llama 3.1 backbone with long‑context (131k) support
 - 4‑bit quantization via BitsAndBytes for single‑GPU inference
@@ -25,19 +27,18 @@ Foundational fine‑tuned model developed by CogniX LTD.
 - Conversational alignment with supportive, coaching‑style responses
 - Ready for Python `transformers` + `unsloth` workflows
 
-## Model Description
+### Model Description:
 
-CogniXpert v1.0 is a LoRA‑tuned variant of Llama 3.1 8B optimized for safe, empathetic conversation. The adapter focuses on key transformer projection modules, and default generation settings favor stable, coherent replies. Tokenizer configuration preserves the Llama 3 special tokens and right‑padding for batched inference.
+- CogniXpert v1.0 is a LoRA‑tuned variant of Llama 3.1 8B optimized for safe, empathetic conversation. The adapter focuses on key transformer projection modules, and default generation settings favor stable, coherent replies. Tokenizer configuration preserves the Llama 3 special tokens and right‑padding for batched inference.
 
-## Dataset Sources
+### Dataset Sources:
 
 - Native datasets: open mental health dialogue corpora curated for supportive conversation and coaching contexts.
 - Synthetic datasets: additional coaching‑style dialogues generated using OpenAI models to augment coverage and style diversity.
 - Fine‑tuning combined both native and synthetic sources with safety‑oriented filtering and prompt design.
 
  
-
-## Model Details
+### Model Details:
 
 - Base model: `Meta Llama 3.1 8B`
 - Context length: `131,072`
@@ -47,14 +48,14 @@ CogniXpert v1.0 is a LoRA‑tuned variant of Llama 3.1 8B optimized for safe, em
 - Dtype: `float16`
 - Libraries: `transformers==4.47.1`, `unsloth==2024.9`, `peft`
 
-## Generation Configuration
+### Generation Configuration:
 
 - Temperature: `0.6`
 - Top‑p: `0.9`
 - Sampling: enabled
 - Max length: inherits long‑context defaults
 
-## Quick Start
+### Quick Start:
 
 ```python
 from transformers import AutoModelForCausalLM, AutoTokenizer, TextStreamer
@@ -74,7 +75,7 @@ response = tokenizer.decode(outputs[0], skip_special_tokens=True)
 print(response)
 ```
 
-## Streamlit Demo
+### Streamlit Demo:
 
 - Install dependencies: `pip install -U streamlit transformers peft bitsandbytes unsloth accelerate`
 - Run the app: `streamlit run app.py`
@@ -82,9 +83,9 @@ print(response)
 
 Alternatively: `pip install -r requirements.txt`
 
-### Using the LoRA Adapter
+### Using the LoRA Adapter:
 
-If you have the LoRA adapter weights (e.g., `adapter_model.bin`) for CogniXpert v1.0, you can attach them to the base model:
+- If you have the LoRA adapter weights (e.g., `adapter_model.bin`) for CogniXpert v1.0, you can attach them to the base model:
 
 ```python
 from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -104,14 +105,14 @@ outputs = model.generate(**inputs, max_new_tokens=256, temperature=0.6, top_p=0.
 print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 ```
 
-### Restoring Adapter Weights
+### Restoring Adapter Weights:
 
 - Place `adapter_config.json` and either `adapter_model.safetensors` or `adapter_model.bin` in the project root (`c:/Users/Public/CogniXpert-Model-v1.0`).
 - The Streamlit demo auto‑attaches the adapter only when both config and weights are present; otherwise it runs base‑only and shows a warning.
 
-## Chat Prompting:
+### Chat Prompting:
 
-Llama 3 models expect structured headers and end‑of‑turn markers:
+- Llama 3 models expect structured headers and end‑of‑turn markers:
 
 ```text
 <|begin_of_text|><|start_header_id|>system<|end_header_id|>
@@ -123,20 +124,20 @@ I feel overwhelmed at work. Any suggestions?<|eot_id|>
 
 Terminate the assistant’s reply with `<|eot_id|>` when streaming multiple turns.
 
-## Hardware & Performance
+### Hardware & Performance:
 
 - Runs on a single modern GPU with 4‑bit quantization; 16GB+ VRAM recommended
 - Up to 131k tokens context; long prompts require sufficient memory and batching care
 - Use `device_map="auto"` to distribute layers when available
 
-## Safety, Scope, and Limitations
+### Safety, Scope, and Limitations:
 
 - Intended for supportive conversation and coaching. It is not a medical device and does not provide diagnosis or treatment.
 - Encourages help‑seeking, evidence‑based coping strategies, and urgent resource guidance where appropriate.
 - May reflect biases present in training sources; review outputs before production use.
 - Avoid high‑risk clinical decision support without human oversight.
 
-## Reproducibility (Unsloth + PEFT sketch)
+### Reproducibility (Unsloth + PEFT sketch):
 
 ```python
 # Pseudocode sketch of LoRA fine-tuning configuration
@@ -153,7 +154,7 @@ config = LoraConfig(
 # Save with: model.save_pretrained(ADAPTER_DIR)  # produces adapter_model.bin + adapter_config.json
 ```
 
-## Contribute
+### Contribute:
 
 - Improve safety alignment, prompting, and guardrails
 - Add evaluation scripts, probes, and benchmarks
@@ -164,7 +165,7 @@ config = LoraConfig(
 
 Read `CONTRIBUTING.md` to get started. Open issues for discussion and submit focused pull requests. Community standards are defined in `CODE_OF_CONDUCT.md`. For responsible disclosure, see `SECURITY.md`.
 
-## Roadmap
+### Roadmap:
 
 - Release reproducible training scripts and evaluation suite
 - Publish LoRA adapter weights with versioned artifacts
@@ -173,7 +174,7 @@ Read `CONTRIBUTING.md` to get started. Open issues for discussion and submit foc
 - Optimize inference for CPU and low‑VRAM devices
 - Add tutorials and notebooks for deployment and monitoring
 
-## Optional Next Steps
+### Optional Next Steps:
 
 - Add CI with GitHub Actions for lint/type import and Streamlit smoke tests
 - Publish versioned releases and attach LoRA adapter artifacts
@@ -182,14 +183,14 @@ Read `CONTRIBUTING.md` to get started. Open issues for discussion and submit foc
 - Create a docs site (MkDocs/Docusaurus) with tutorials and API references
 - Add example notebooks for inference, alignment, and evaluation
 
-## Hugging Face Sync
+### Hugging Face Sync:
 
 - Set environment variables: `HF_TOKEN=<your_token>` and `HF_REPO_ID=<org/model>`
 - Install: `pip install -r requirements.txt`
 - Sync model card: `python tools/sync_hf_readme.py` or `python tools/sync_hf_readme.py <org/model>`
 - This replaces the HF repo `README.md` with `README.hf.md` so metadata renders correctly.
 
-## Acknowledgements
+### Acknowledgements:
 
 - Foundational fine‑tuned model dev engineered by CogniX LTD.
 - Meta Llama 3.1 for the base architecture
@@ -197,6 +198,6 @@ Read `CONTRIBUTING.md` to get started. Open issues for discussion and submit foc
 - Open‑source contributors in safety‑aligned conversational AI
 - Libraries: `transformers`, `unsloth`, `peft`, `bitsandbytes`
 
-## License
+### License:
 
-This repository is licensed under `AGPL‑3.0`. The underlying base model (Meta Llama 3.1) is subject to Meta’s license; ensure compliance when distributing derivatives or weights.
+- This repository is licensed under `AGPL‑3.0`. The underlying base model (Meta Llama 3.1) is subject to Meta’s license; ensure compliance when distributing derivatives or weights.
