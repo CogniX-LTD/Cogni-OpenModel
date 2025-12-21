@@ -2,9 +2,7 @@
 
 - Safety‑aware, non‑clinical conversational AI for supportive mental health and wellbeing use‑cases, built on Meta Llama 3.1 8B and fine‑tuned with LoRA. This repository contains the model configuration, tokenizer, generation defaults, and adapter metadata for efficient deployment.
 
-#### Disclaimer:
-
-Disclaimer: This project is intended for supportive, non‑clinical use. It does not replace care from licensed mental health professionals and does not provide diagnosis or treatment. If you are in crisis or may harm yourself or others, contact emergency services or your local suicide prevention hotline immediately.
+- **Disclaimer:** This project is intended for supportive, non‑clinical use. It does not replace care from licensed mental health professionals and does not provide diagnosis or treatment. If you are in crisis or may harm yourself or others, contact emergency services or your local suicide prevention hotline immediately.
 
 ![License](https://img.shields.io/badge/License-AGPL--3.0-blue)
 ![Model](https://img.shields.io/badge/Model-Llama_3.1_8B-green)
