@@ -1,10 +1,10 @@
-### CogniXpert-AI Model v1.0:
+﻿### CogniXpert-AI Model v1.0:
 
 - Safety‑aware, non‑clinical conversational AI for supportive mental health and wellbeing use‑cases, built on Meta Llama 3.1 8B and fine‑tuned with LoRA. This repository contains the model configuration, tokenizer, generation defaults, and adapter metadata for efficient deployment.
 
 - **Disclaimer:** This project is intended for supportive, non‑clinical use. It does not replace care from licensed mental health professionals and does not provide diagnosis or treatment. If you are in crisis or may harm yourself or others, contact emergency services or your local suicide prevention hotline immediately.
 
-![License](https://img.shields.io/badge/License-AGPL--3.0-blue)
+![License](https://img.shields.io/badge/License-MIT-blue)
 ![Model](https://img.shields.io/badge/Model-Llama_3.1_8B-green)
 ![Quantization](https://img.shields.io/badge/Quantization-4bit_(NF4)-orange)
 ![Transformers](https://img.shields.io/badge/Transformers-4.47.1-purple)
@@ -198,4 +198,6 @@ Read `CONTRIBUTING.md` to get started. Open issues for discussion and submit foc
 
 ### License:
 
-- This repository is licensed under `AGPL‑3.0`. The underlying base model (Meta Llama 3.1) is subject to Meta’s license; ensure compliance when distributing derivatives or weights.
+- This repository (LoRA adapter weights, configuration files, and code) is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for the full text.
+
+- **Note on licensing:** The underlying base model (**Meta Llama 3.1 8B**) is **not** covered by the MIT License and remains subject to [Meta's Llama 3.1 Community License Agreement](https://llama.meta.com/llama3_1/license/). You must comply with Meta's license terms when using, distributing, or building upon the combined model.
