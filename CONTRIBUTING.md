@@ -1,6 +1,6 @@
-# Contributing to CogniXpert v1.0
+﻿# Contributing to Cogni-OpenModel
 
-Thanks for your interest in improving CogniXpert. Contributions of code, docs, evaluations, and safety improvements are welcome.
+Thanks for your interest in improving Cogni-OpenModel. Contributions of code, docs, evaluations, and safety improvements are welcome.
 
 ## Ways to Contribute
 
@@ -53,5 +53,5 @@ Thanks for your interest in improving CogniXpert. Contributions of code, docs, e
 
 ## License
 
-By contributing, you agree your contributions are licensed under AGPL‑3.0.
+By contributing, you agree your contributions are licensed under MIT.
 

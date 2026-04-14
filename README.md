@@ -1,4 +1,4 @@
-﻿### CogniXpert-AI Model v1.0:
+﻿### Cogni-OpenModel:
 
 - Safety‑aware, non‑clinical conversational AI for supportive mental health and wellbeing use‑cases, built on Meta Llama 3.1 8B and fine‑tuned with LoRA. This repository contains the model configuration, tokenizer, generation defaults, and adapter metadata for efficient deployment.
 
@@ -27,7 +27,7 @@ Foundational fine‑tuned model developed by CogniX LTD.
 
 ### Model Description:
 
-- CogniXpert v1.0 is a LoRA‑tuned variant of Llama 3.1 8B optimized for safe, empathetic conversation. The adapter focuses on key transformer projection modules, and default generation settings favor stable, coherent replies. Tokenizer configuration preserves the Llama 3 special tokens and right‑padding for batched inference.
+- Cogni-OpenModel is a LoRA‑tuned variant of Llama 3.1 8B optimized for safe, empathetic conversation. The adapter focuses on key transformer projection modules, and default generation settings favor stable, coherent replies. Tokenizer configuration preserves the Llama 3 special tokens and right‑padding for batched inference.
 
 ### Dataset Sources:
 
@@ -60,7 +60,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, TextStreamer
 
 # Base-only inference (loads Unsloth 4-bit backbone)
 MODEL_ID = "unsloth/meta-llama-3.1-8b-bnb-4bit"
-LOCAL_DIR = "c:/Users/Public/CogniXpert-Model-v1.0"
+LOCAL_DIR = "c:/Users/Public/Cogni-OpenModel"
 
 tokenizer = AutoTokenizer.from_pretrained(LOCAL_DIR)
 model = AutoModelForCausalLM.from_pretrained(MODEL_ID, device_map="auto")
@@ -83,14 +83,14 @@ Alternatively: `pip install -r requirements.txt`
 
 ### Using the LoRA Adapter:
 
-- If you have the LoRA adapter weights (e.g., `adapter_model.bin`) for CogniXpert v1.0, you can attach them to the base model:
+- If you have the LoRA adapter weights (e.g., `adapter_model.bin`) for Cogni-OpenModel, you can attach them to the base model:
 
 ```python
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from peft import PeftModel
 
 BASE_ID = "unsloth/meta-llama-3.1-8b-bnb-4bit"
-LOCAL_DIR = "c:/Users/Public/CogniXpert-Model-v1.0"  # contains adapter_config.json
+LOCAL_DIR = "c:/Users/Public/Cogni-OpenModel"  # contains adapter_config.json
 ADAPTER_DIR = LOCAL_DIR  # place adapter weights here (adapter_model.bin)
 
 tokenizer = AutoTokenizer.from_pretrained(LOCAL_DIR)
@@ -105,7 +105,7 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 
 ### Restoring Adapter Weights:
 
-- Place `adapter_config.json` and either `adapter_model.safetensors` or `adapter_model.bin` in the project root (`c:/Users/Public/CogniXpert-Model-v1.0`).
+- Place `adapter_config.json` and either `adapter_model.safetensors` or `adapter_model.bin` in the project root (`c:/Users/Public/Cogni-OpenModel`).
 - The Streamlit demo auto‑attaches the adapter only when both config and weights are present; otherwise it runs base‑only and shows a warning.
 
 ### Chat Prompting:
@@ -114,7 +114,7 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 
 ```text
 <|begin_of_text|><|start_header_id|>system<|end_header_id|>
-You are CogniXpert, a supportive, safety-aware assistant.<|eot_id|>
+You are Cogni-OpenModel, a supportive, safety-aware assistant.<|eot_id|>
 <|start_header_id|>user<|end_header_id|>
 I feel overwhelmed at work. Any suggestions?<|eot_id|>
 <|start_header_id|>assistant<|end_header_id|>

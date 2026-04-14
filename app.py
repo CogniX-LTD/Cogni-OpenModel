@@ -1,10 +1,10 @@
-import os
+﻿import os
 import streamlit as st
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from peft import PeftModel
 
-LOCAL_DIR = "c:/Users/Public/CogniXpert-Model-v1.0"
+LOCAL_DIR = "c:/Users/Public/Cogni-OpenModel"
 BASE_ID = "unsloth/meta-llama-3.1-8b-bnb-4bit"
 
 @st.cache_resource
@@ -33,12 +33,12 @@ def format_prompt(system_text: str, messages: list[str]):
     content += "<|start_header_id|>assistant<|end_header_id|>\n"
     return content
 
-st.set_page_config(page_title="CogniXpert Chat", page_icon="🧠", layout="centered")
+st.set_page_config(page_title="Cogni-OpenModel Chat", page_icon="🧠", layout="centered")
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-st.title("CogniXpert Chat")
+st.title("Cogni-OpenModel Chat")
 st.caption("Supportive, safety‑aware conversational AI. Not medical advice.")
 
 use_adapter = st.sidebar.checkbox("Use LoRA adapter if available", value=True)
@@ -46,7 +46,7 @@ temperature = st.sidebar.slider("Temperature", 0.0, 1.5, 0.6, 0.05)
 top_p = st.sidebar.slider("Top‑p", 0.1, 1.0, 0.9, 0.05)
 max_new_tokens = st.sidebar.slider("Max new tokens", 32, 1024, 256, 32)
 
-system_default = "You are CogniXpert, a supportive, safety‑aware assistant. Encourage help‑seeking and evidence‑based coping strategies. Avoid clinical diagnosis or prescriptive treatment."
+system_default = "You are Cogni-OpenModel, a supportive, safety‑aware assistant. Encourage help‑seeking and evidence‑based coping strategies. Avoid clinical diagnosis or prescriptive treatment."
 system_text = st.text_area("System prompt", value=system_default, height=100)
 
 tok, model = load_model(use_adapter)
