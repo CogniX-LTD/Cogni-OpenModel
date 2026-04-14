@@ -1,10 +1,10 @@
-﻿import os
+import os
 import streamlit as st
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from peft import PeftModel
 
-LOCAL_DIR = "c:/Users/Public/Cogni-OpenModel"
+LOCAL_DIR = "./"
 BASE_ID = "unsloth/meta-llama-3.1-8b-bnb-4bit"
 
 @st.cache_resource
