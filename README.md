@@ -1,4 +1,4 @@
-﻿### Cogni-OpenModel:
+### Cogni-OpenModel:
 
 - Safety‑aware, non‑clinical conversational AI for supportive mental health and wellbeing use‑cases, built on Meta Llama 3.1 8B and fine‑tuned with LoRA. This repository contains the model configuration, tokenizer, generation defaults, and adapter metadata for efficient deployment.
 
@@ -60,7 +60,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, TextStreamer
 
 # Base-only inference (loads Unsloth 4-bit backbone)
 MODEL_ID = "unsloth/meta-llama-3.1-8b-bnb-4bit"
-LOCAL_DIR = "c:/Users/Public/Cogni-OpenModel"
+LOCAL_DIR = "./"
 
 tokenizer = AutoTokenizer.from_pretrained(LOCAL_DIR)
 model = AutoModelForCausalLM.from_pretrained(MODEL_ID, device_map="auto")
@@ -90,7 +90,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 from peft import PeftModel
 
 BASE_ID = "unsloth/meta-llama-3.1-8b-bnb-4bit"
-LOCAL_DIR = "c:/Users/Public/Cogni-OpenModel"  # contains adapter_config.json
+LOCAL_DIR = "./"  # contains adapter_config.json
 ADAPTER_DIR = LOCAL_DIR  # place adapter weights here (adapter_model.bin)
 
 tokenizer = AutoTokenizer.from_pretrained(LOCAL_DIR)
@@ -105,7 +105,7 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 
 ### Restoring Adapter Weights:
 
-- Place `adapter_config.json` and either `adapter_model.safetensors` or `adapter_model.bin` in the project root (`c:/Users/Public/Cogni-OpenModel`).
+- Place `adapter_config.json` and either `adapter_model.safetensors` or `adapter_model.bin` in the project root.
 - The Streamlit demo auto‑attaches the adapter only when both config and weights are present; otherwise it runs base‑only and shows a warning.
 
 ### Chat Prompting:
@@ -186,7 +186,8 @@ Read `CONTRIBUTING.md` to get started. Open issues for discussion and submit foc
 - Set environment variables: `HF_TOKEN=<your_token>` and `HF_REPO_ID=<org/model>`
 - Install: `pip install -r requirements.txt`
 - Sync model card: `python tools/sync_hf_readme.py` or `python tools/sync_hf_readme.py <org/model>`
-- This replaces the HF repo `README.md` with `README.hf.md` so metadata renders correctly.
+- This replaces the HF repo `README.md` with `README.hf.md` so metadata (license, tags, etc.) renders correctly.
+- Ensure you have `HF_TOKEN` and `HF_REPO_ID` set in your environment.
 
 ### Acknowledgements:
 
