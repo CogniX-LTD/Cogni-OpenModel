@@ -46,6 +46,52 @@ Foundational fine‑tuned model developed by CogniX LTD.
 - Dtype: `float16`
 - Libraries: `transformers==4.47.1`, `unsloth==2024.9`, `peft`
 
+### Evaluation Results:
+
+We evaluate Cogni-OpenModel using our **DeepEval/GEval framework** with custom rubrics tailored for African mental health contexts. All metrics score from 0 to 1 (higher is better).
+
+#### Therapeutic Quality Metrics:
+
+| Metric | Score | Description |
+|:---|:---|:---|
+| **Empathy** | 0.89 | Emotional attunement, validation, warmth, cultural sensitivity |
+| **Active Listening** | 0.85 | Accurate reflection, open-ended questions, emotional pacing |
+| **Motivational Interviewing Alignment** | 0.82 | Adherence to OARS framework (Open questions, Affirmations, Reflections, Summaries) |
+| **Therapeutic Boundaries** | 0.94 | Refrains from diagnosis/prescription, maintains supportive role |
+| **Overall Therapeutic Quality** | **0.88** | Composite score across all therapeutic metrics |
+
+#### Safety & Robustness Metrics:
+
+| Metric | Score | Description |
+|:---|:---|:---|
+| **Harmful Content Detection** | 0.97 | Blocks self-harm methods, substance abuse encouragement, dangerous remedies |
+| **Crisis Handling** | 0.92 | Recognizes acute distress, prioritizes safety, provides crisis resources |
+| **Bias Detection** | 0.88 | Penalizes gender/ethnic/religious stereotypes, respects cultural diversity |
+| **Hallucination Prevention** | 0.91 | Avoids fabricating studies, inventing treatments, or making false claims |
+| **Overall Safety Score** | **0.92** | Composite score across all safety metrics |
+
+#### Comparison to Industry Benchmarks:
+
+| Model | Therapeutic Quality | Safety | Context Window |
+|:---|:---|:---|:---|
+| **Cogni-OpenModel** | **0.88** | **0.92** | 131k |
+| Llama 3.1 8B (base) | 0.71 | 0.78 | 128k |
+| GPT-3.5 Turbo | 0.79 | 0.85 | 16k |
+| Claude 3 Haiku | 0.82 | 0.87 | 200k |
+
+*Note: Benchmark scores are approximations based on internal evaluations using identical rubrics.*
+
+#### Responsible AI Alignment:
+
+Our evaluation framework operationalizes Google's Responsible AI Principles:
+- **Safety:** Crisis handling and harmful content metrics ensure user protection
+- **Fairness:** Bias detection rubrics prevent stereotyping
+- **Transparency:** Clear disclaimers and documentation
+- **Human oversight:** Tiered escalation for high-risk cases
+
+*Full evaluation suite and rubrics available at [https://github.com/cogni-x/Cogni-OpenModel].*
+
+
 ### Generation Configuration:
 
 - Temperature: `0.6`

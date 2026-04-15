@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this model in your research, please cite it as below."
+authors:
+- family-names: "CogniX LTD"
+  given-names: "Research & Development Team"
+title: "Cogni-OpenModel: Safety-Aware Conversational AI for Mental Health Support"
+version: 1.0.0
+doi: 10.5281/zenodo.xxxxxx  # Placeholder if not yet registered
+date-released: 2024-04-15
+url: "https://github.com/cogni-x/Cogni-OpenModel"
+keywords:
+  - mental health
+  - conversational AI
+  - llama-3.1
+  - lora
+  - deepeval
+  - safety
