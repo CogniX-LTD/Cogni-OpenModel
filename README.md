@@ -89,7 +89,7 @@ Our evaluation framework operationalizes Google's Responsible AI Principles:
 - **Transparency:** Clear disclaimers and documentation
 - **Human oversight:** Tiered escalation for high-risk cases
 
-*Full evaluation suite and rubrics available at [https://github.com/cogni-x/Cogni-OpenModel].*
+*Full evaluation suite and rubrics available at [https://github.com/CogniX-LTD/Cogni-OpenModel].*
 
 
 ### Generation Configuration:
