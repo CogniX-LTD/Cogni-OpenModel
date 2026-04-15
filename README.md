@@ -31,9 +31,20 @@ Foundational fine‑tuned model developed by CogniX LTD.
 
 ### Dataset Sources:
 
-- **Native datasets**: Open mental health dialogue corpora curated for supportive conversation and coaching contexts. This includes publicly available datasets such as **Counsel Chat** and **Psych8k**.
-- **Synthetic datasets**: Additional coaching‑style dialogues generated using OpenAI models (**GPT‑4o**) to augment coverage and style diversity.
-- **Release & Licensing**: Fine‑tuning combined both native and synthetic sources with safety‑oriented filtering and prompt design. Full dataset provenance will be released with our open dataset under a **CC‑BY 4.0** license.
+Our training data prioritizes real therapy conversations from licensed professionals over synthetic data for authenticity. Primary sources include:
+
+- **Amod/mental_health_counseling_conversations**: Real counseling platform Q&A.
+- **nbertagnolli/counsel-chat**: Licensed therapist responses.
+- **EmoCareAI/Psych8k**: Transcripts from real counseling sessions.
+- **vzeizer/MentalHealth_Analysis**: mental health condition recognition / classification eg. depression, anxiety, suicidal ideation.
+
+These are supplemented with synthetic data (generated using **GPT‑4o/Claude Sonnet 4.5** with safety filtering) to enhance coverage of specific scenarios while maintaining therapeutic quality.
+
+#### Curation Rationale:
+"There is a lack of high quality open source mental health data available for study in NLP. Most datasets revolve around forums like Reddit, which can provide great insights, but don't capture the type of language often used by counselors. This dataset seeks to help bridge that gap and provide additional data of counselors interacting with patients in need."
+
+#### Release & Licensing:
+Full dataset provenance will be released with our open dataset under a **CC‑BY 4.0** license.
 
  
 ### Model Details:
