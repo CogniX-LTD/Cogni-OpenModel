@@ -31,9 +31,9 @@ Foundational fine‑tuned model developed by CogniX LTD.
 
 ### Dataset Sources:
 
-- Native datasets: open mental health dialogue corpora curated for supportive conversation and coaching contexts.
-- Synthetic datasets: additional coaching‑style dialogues generated using OpenAI models to augment coverage and style diversity.
-- Fine‑tuning combined both native and synthetic sources with safety‑oriented filtering and prompt design.
+- **Native datasets**: Open mental health dialogue corpora curated for supportive conversation and coaching contexts. This includes publicly available datasets such as **Counsel Chat** and **Psych8k**.
+- **Synthetic datasets**: Additional coaching‑style dialogues generated using OpenAI models (**GPT‑4o**) to augment coverage and style diversity.
+- **Release & Licensing**: Fine‑tuning combined both native and synthetic sources with safety‑oriented filtering and prompt design. Full dataset provenance will be released with our open dataset under a **CC‑BY 4.0** license.
 
  
 ### Model Details:
